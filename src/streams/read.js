@@ -11,7 +11,7 @@ const filepath = path.join(__dirname, 'files', 'fileToRead.txt');
 
 const read = async () => {
   pipeline(createReadStream(filepath), stdout, (err) => {
-    console.log('error');
+    console.log(err.stack);
   });
 };
 
