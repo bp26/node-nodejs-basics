@@ -9,7 +9,9 @@ const transform = async () => {
     },
   });
   pipeline(stdin, reverse, stdout, (err) => {
-    console.log(err.stack);
+    if (err) {
+      console.log(err.stack);
+    }
   });
 };
 

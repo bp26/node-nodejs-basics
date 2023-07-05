@@ -11,7 +11,9 @@ const filepath = path.join(__dirname, 'files', 'fileToWrite.txt');
 
 const write = async () => {
   pipeline(stdin, createWriteStream(filepath), (err) => {
-    console.log(err.stack);
+    if (err) {
+      console.log(err.stack);
+    }
   });
 };
 
